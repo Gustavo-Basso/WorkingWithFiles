@@ -12,7 +12,7 @@ class Program {
         string path = @"c:\AMD\Aula\Atv.csv";
         string pathCreateDirectory = @"c:\AMD\Aula\Out";
         string pathCreateFile = @"c:\AMD\Aula\Out\Sumary.csv";
-        DirectoryInfo df = new DirectoryInfo(path);
+       
         StreamReader sr;
         List<SumProcess> sm = new List<SumProcess>();
         try {
@@ -35,11 +35,7 @@ class Program {
                     sm.Add(new SumProcess(name, price, quanty));
                 }
             }
-            foreach(SumProcess line in sm) {
-
-                Console.WriteLine(line.Item + " - " + line.Quant + " - " + line.Price);
-
-            }
+            
             File.Create(pathCreateFile).Close();
             using (StreamWriter sw = new StreamWriter(pathCreateFile)){ 
             
